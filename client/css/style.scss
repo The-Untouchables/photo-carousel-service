@@ -1,0 +1,85 @@
+img {
+  vertical-align: middle;
+}
+img {
+  border: 0;
+}
+
+.button {
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    width:100px;
+    height:30px;
+}
+
+.div-photo-carousel-photo {
+  position:relative;
+  text-align:center;
+  display: inline-block;
+  height: 368px;
+  display: inline-block;
+  min-height: 400px;
+  max-height: 512px;
+}
+
+.div-photo-carousel {
+  height: 368px;
+  min-height: 400px;
+  max-height: 512px;
+  overflow: hidden;
+}
+
+.modal-lightbox-container {
+    background-color: rgba(0,0,0,0.85);
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.modal-lightbox-content {
+    background-color: transparent;
+    height: 100%;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-lightbox-modal-close {
+    font-size: 4em;
+}
+
+.div-photo-lightbox-prev-button,
+.div-photo-lightbox-next-button {
+  font-size: 4em;
+  height: 100vh;
+  color: #fff;
+  background-color: rgba(0,0,0,0.85);
+}
+
+@media (min-height: 700px) {
+  .div-photo-carousel-photo {
+    height: 368px;
+  }
+}
+@media (max-width: 743px) {
+  .modal-lightbox-content {
+    max-width: none;
+    height: 100%;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    overflow: auto;
+  }
+}
