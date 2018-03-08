@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Photo from './Photo.jsx';
 import LightBox from './LightBox';
+import SVGIcons from './SVGIcons.js';
 import ReactModal from 'react-modal';
 import '../../css/style.scss';
 
@@ -60,17 +61,17 @@ class PhotoCarousel extends React.Component {
           className="modal-lightbox-container"
           contentLabel="LightBox"
           onRequestClose={this.handleCloseModal}
-        >
+          >
           <div className="modal-lightbox-container-content">
-              <button className="button-lightbox-modal-close" onClick={this.handleCloseModal}>
-                <i className="glyphicon glyphicon-remove"></i>
-              </button>
+            <button className="button-lightbox-modal-close" onClick={this.handleCloseModal}>
+              <span dangerouslySetInnerHTML={{ __html: SVGIcons['Close Button'] }}></span>
+            </button>
             <div className="div-lightbox-scroll-wrapper">
               <LightBox photos={this.photos} currentPic={this.state.currentPic}></LightBox>
             </div>
           </div>
         </ReactModal>
-        {this.photos !== undefined ? this.photos.map((photo, idx) => <Photo key={idx} index={idx} onClick={this.handleOpenModal} photo={photo}></Photo>) : <div></div>}
+          {this.photos !== undefined ? this.photos.map((photo, idx) => <div className="div-photo-main"><Photo key={idx} index={idx} onClick={this.handleOpenModal} photo={photo}></Photo></div>) : <div></div>}
       </div>
     );
   }

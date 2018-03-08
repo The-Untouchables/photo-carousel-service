@@ -13,6 +13,10 @@ img {
     height:30px;
 }
 
+button:focus {
+  outline:0;
+}
+
 .div-photo-carousel-photo {
   position:relative;
   text-align:center;
@@ -24,22 +28,41 @@ img {
 }
 
 .div-photo-carousel {
+  display: flex;
   height: 368px;
   min-height: 400px;
   max-height: 512px;
   overflow: hidden;
 }
 
+.div-photo-carousel-container {
+  overflow: hidden;
+}
+
 .modal-lightbox-container {
-    background-color: rgba(0,0,0,0.85);
-    position: fixed;
-    z-index: 2000;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow-y: auto;
-    -webkit-transform: translate3d(0, 0, 0);
+  background-color: rgba(0,0,0,0.85);
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.modal-lightbox-container-content {
+  position: relative;
+}
+
+.div-photo-main {
+  margin-left: 16px;
+}
+
+.div-lightbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
 }
 
 .modal-lightbox-content {
@@ -56,16 +79,23 @@ img {
     margin-right: auto;
 }
 
-.button-lightbox-modal-close {
-    font-size: 4em;
-}
-
 .div-photo-lightbox-prev-button,
 .div-photo-lightbox-next-button {
   font-size: 4em;
+  border: none;
   height: 100vh;
   color: #fff;
-  background-color: rgba(0,0,0,0.85);
+  background-color: transparent;
+}
+
+.button-lightbox-modal-close {
+  position: absolute;
+  right: 0;
+  border: none;
+  height: 80px;
+  width: 80px;
+  color: #fff;
+  background-color: transparent;
 }
 
 @media (min-height: 700px) {
